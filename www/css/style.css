@@ -32,6 +32,7 @@
         left:10px; right:10px;
         box-shadow: 5px 5px 5px;
         width: 50%;
+        margin: 0 auto;
     }
     
     #mycanvas {
@@ -83,8 +84,4 @@
 
     #remain {
         font-weight: bold;
-    }
-
-    #time {
-        
     }
