@@ -161,6 +161,7 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
+        btnCClick(null);
         
     }
 
@@ -184,16 +185,20 @@
     function btnAClick(e){
         active = true;
         startTime = new Date();
+
+        $('#btnA').prop('disabled', true);
     }
 
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
+
+        $('#btnA').prop('disabled', false);
     }
 
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
-        alarm();
+        //alarm();
         active = false;
         period = 60*parseInt($("#minute").val())+parseInt($("#second").val());
         $("#remain").html("残り時間:" + period);
@@ -208,10 +213,12 @@
             $("#time").html("経過時間: "+etime);
             $("#remain").html("残り時間: "+rest);
             analog(rest);
-        }
-        if(rest<=0) {
-            active = false;
-            alarm();
+
+            if(rest<=0) {
+                active = false;
+                alarm();
+                $('#btnA').prop('disabled', false);
+            }
         }
     } 
 
@@ -225,7 +232,7 @@
 
     <div id="remain">Remaining time</div>
     <div id="time">Time</div>
-    <button id="btnA">ButtonA</button>  
+    <button id="btnA">Start</button>  
     <button id="btnB">ButtonB</button>  
     <button id="btnC">ButtonC</button>  
     <input type="number" id="minute" value=3 >
