@@ -189,12 +189,11 @@
     function btnAClick(e){
         if(isPause) {
             pauseTime += new Date() - pauseStartTime;
-            isPause = false;
         } else {
             startTime = new Date();
         }
         active = true;
-
+        isPause = false;
         $('#btnA').prop('disabled', true);
         $("#btnA").html("Start");//Resumeから戻す用.
     }
@@ -224,6 +223,7 @@
         $('#btnA').prop('disabled', false);//btnAを有効化.
         pauseStartTime = 0;
         pauseTime = 0;
+        isPause = false;
     }
     
  
@@ -240,6 +240,8 @@
                 active = false;
                 alarm();
                 $('#btnA').prop('disabled', false);
+                isPause = false;
+                pauseTime = 0;
             }
         }
     } 
