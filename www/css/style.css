@@ -45,12 +45,12 @@
     
     #btnA {
         background-color: yellow;
-        color: green;
         font-size: 20px;
         position:absolute; top:380px; left:2%; width:43%; height:60px; 
     }
     
     #btnB {
+        background-color: yellow;
         font-size: 20px;
         position:absolute; top:380px; left:45%; width:25%; height:60px; 
     }
@@ -78,6 +78,7 @@
 
     button {
         color: blue;
+        background-color: yellow;
         font-family: Times;
         border-radius: 20px;
     }
